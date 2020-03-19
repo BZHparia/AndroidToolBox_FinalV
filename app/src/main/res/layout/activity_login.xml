@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    android:background="@drawable/background_gradient"
+    tools:context=".LoginActivity">
+
+    <TextView
+        android:id="@+id/log"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:textColor="@color/white"
+        android:text="Login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/logo_isen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:maxHeight="150dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/isen_logo_rounded" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="320dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="64dp"
+        app:layout_constraintEnd_toEndOf="@id/log"
+        app:layout_constraintStart_toStartOf="@id/log"
+        app:layout_constraintTop_toBottomOf="@+id/logo_isen">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/idLog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:hint="@string/identifiant" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout2"
+        android:layout_width="320dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="64dp"
+        app:layout_constraintEnd_toEndOf="@id/log"
+        app:layout_constraintStart_toStartOf="@id/log"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+        app:passwordToggleTint="#FF0000">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/idMdp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textColor="@color/black"
+            android:hint="@string/password" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="25dp"
+        android:text="RESET"
+        app:layout_constraintBottom_toBottomOf="@+id/idButtonLog"
+        app:layout_constraintEnd_toStartOf="@+id/idButtonLog"
+        app:layout_constraintTop_toTopOf="@+id/idButtonLog" />
+
+    <Button
+        android:id="@+id/idButtonLog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginRight="100dp"
+        android:text="Valider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

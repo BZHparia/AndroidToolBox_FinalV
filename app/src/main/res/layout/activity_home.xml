@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+
+    <ImageView
+        android:id="@+id/logo_isen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:maxHeight="150dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/isen_logo_rounded" />
+
+    <TextView
+        android:id="@+id/title_HomeActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:textSize="25sp"
+        android:textColor="@color/white"
+        android:text="@string/bonjour"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_isen" />
+
+    <ImageView
+        android:id="@+id/idButtonCycle"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_HomeActivity"
+        app:srcCompat="@android:drawable/stat_notify_chat" />
+
+    <ImageView
+        android:id="@+id/idSave"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginLeft="80dp"
+        app:layout_constraintBottom_toBottomOf="@+id/idButtonCycle"
+        app:layout_constraintStart_toEndOf="@+id/idButtonCycle"
+        app:layout_constraintTop_toTopOf="@+id/idButtonCycle"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@android:drawable/ic_menu_save" />
+
+    <ImageView
+        android:id="@+id/idBtnPermit"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="96dp"
+        app:layout_constraintEnd_toEndOf="@+id/idButtonCycle"
+        app:layout_constraintStart_toStartOf="@+id/idButtonCycle"
+        app:layout_constraintTop_toBottomOf="@+id/idButtonCycle"
+        app:srcCompat="@android:drawable/ic_menu_call" />
+
+    <ImageView
+        android:id="@+id/idBtnWebServices"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginLeft="80dp"
+        app:layout_constraintBottom_toBottomOf="@+id/idBtnPermit"
+        app:layout_constraintStart_toEndOf="@+id/idBtnPermit"
+        app:layout_constraintTop_toTopOf="@+id/idBtnPermit"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@android:drawable/stat_sys_download" />
+
+    <TextView
+        android:id="@+id/textview2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/white"
+        android:text="Life Cycle"
+        app:layout_constraintEnd_toEndOf="@+id/idButtonCycle"
+        app:layout_constraintHorizontal_bias="0.357"
+        app:layout_constraintStart_toStartOf="@+id/idButtonCycle"
+        app:layout_constraintTop_toBottomOf="@+id/idButtonCycle" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/white"
+        android:text="Save"
+        app:layout_constraintEnd_toEndOf="@+id/idSave"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="@+id/idSave"
+        app:layout_constraintTop_toBottomOf="@+id/idSave" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Permissions"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/idBtnPermit"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toStartOf="@+id/idBtnPermit"
+        app:layout_constraintTop_toBottomOf="@+id/idBtnPermit" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/white"
+        android:text="WebServices"
+        app:layout_constraintEnd_toEndOf="@+id/idBtnWebServices"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="@+id/idBtnWebServices"
+        app:layout_constraintTop_toBottomOf="@+id/idBtnWebServices" />
+
+    <TextView
+        android:id="@+id/connected_by"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:textColor="@color/light_grey"
+        android:textSize="12dp"
+        android:text="Connecté en tant que:"
+        app:layout_constraintEnd_toEndOf="@+id/idLogged"
+        app:layout_constraintStart_toStartOf="@+id/idLogged"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/idLogged"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/white"
+        android:textSize="12dp"
+        android:text="nom du connecté"
+        app:layout_constraintEnd_toEndOf="@+id/title_HomeActivity"
+        app:layout_constraintStart_toStartOf="@+id/title_HomeActivity"
+        app:layout_constraintTop_toBottomOf="@+id/connected_by" />
+
+    <Button
+        android:id="@+id/idButtonDeco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="@string/d_connexion"
+        app:layout_constraintEnd_toEndOf="@+id/idLogged"
+        app:layout_constraintStart_toStartOf="@+id/idLogged"
+        app:layout_constraintTop_toBottomOf="@+id/idLogged" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
