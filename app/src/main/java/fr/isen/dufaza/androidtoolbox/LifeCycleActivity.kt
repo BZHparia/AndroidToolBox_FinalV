@@ -10,58 +10,35 @@ class LifeCycleActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_life_cycle)
-        Log.d("TAG", "Creating")
 
-        val newFragment = CycleFragment1()
-        val cycleFragment2 = CycleFragment2()
-
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.add(R.id.idLayoutActivityLifeCycle, newFragment)
-        transaction.commit()
-
-        buttonFragment.setOnClickListener {
-            if (newFragment.isResumed) {
-                Log.d( "TAG", "Frag1 is resumed")
-                supportFragmentManager.beginTransaction().replace(R.id.idLayoutActivityLifeCycle, cycleFragment2).commit()
-            }
-            else if (cycleFragment2.isResumed){
-                Log.d( "TAG", "Frag2 is resumed")
-                supportFragmentManager.beginTransaction().replace(R.id.idLayoutActivityLifeCycle, newFragment).commit()
-            }
+        kill_btn.setOnClickListener {
+            onDestroy()
         }
     }
 
-    private fun notification(message: String, isActive: Boolean) {
-        if (isActive){
-            idTitleLifeCycle.text = message
-        }
-        else {
-            Log.d("tag",message)
-        }
-    }
 
     override fun onStart() {
         super.onStart()
-        notification("onStart", true)
+        returnlog.append("onStart()\n")
     }
 
     override fun onResume() {
         super.onResume()
-        notification("onResume", true)
+        returnlog.append("onResume()\n")
     }
 
     override fun onPause() {
         super.onPause()
-        notification("onPause", false)
+        returnlog.append("onPause()\n")
     }
 
     override fun onStop() {
         super.onStop()
-        notification("onStop", false)
+        returnlog.append("onStop()\n")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        notification("onDestroy", false)
+        returnlog.append("onDestroy()\n")
     }
 }
