@@ -3,11 +3,23 @@
     xmlns:dist="http://schemas.android.com/apk/distribution"
     package="fr.isen.dufaza.androidtoolbox">
 
+    <!--Pour lire le JSON-->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!--Pour avoir accès à la position GPS-->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!--Pour lire les contacts-->
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <!--Pour avoir accès au web et touch l'API-->
     <uses-permission android:name="android.permission.INTERNET"/>
+    <!--Pour utiliser le BLE-->
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <!-- If your app targets Android 9 or lower, you can declare
+         ACCESS_COARSE_LOCATION instead. -->
+    <!--N'autoriser que les téléphones compatibles-->
+    <uses-feature android:name="android.hardware.bluetooth_le" android:required="true"/>
+
 
     <application
         android:allowBackup="true"
@@ -20,8 +32,6 @@
         <activity android:name="fr.isen.dufaza.androidtoolbox.PermitActivity" />
         <activity android:name="fr.isen.dufaza.androidtoolbox.StorageActivity" />
         <activity android:name="fr.isen.dufaza.androidtoolbox.FormulaireActivity" />
-        <activity android:name="fr.isen.dufaza.androidtoolbox.CycleFragment2" />
-        <activity android:name="fr.isen.dufaza.androidtoolbox.CycleFragment1" />
         <activity android:name="fr.isen.dufaza.androidtoolbox.LifeCycleActivity" />
         <activity
             android:name="fr.isen.dufaza.androidtoolbox.HomeActivity"
@@ -38,6 +48,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="fr.isen.dufaza.androidtoolbox.BLEscanActivity" />
     </application>
 
 </manifest>

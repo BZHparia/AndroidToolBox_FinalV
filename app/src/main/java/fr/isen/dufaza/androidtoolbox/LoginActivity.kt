@@ -29,7 +29,6 @@ class LoginActivity : AppCompatActivity() {
             //Pas bien de stocker en dur, il faudrait interroger une DB
             val rightId = "admin"
             val rightMdp = "123"
-            var message = "$id authentifié"
 
             if(id == rightId && mdp == rightMdp){
 
@@ -43,7 +42,7 @@ class LoginActivity : AppCompatActivity() {
                 startActivity(changePage)
             }
             else{
-                message = "Authentification échouée"
+                var message = "Authentification échouée"
                 val toast2 = Toast.makeText(this,message, Toast.LENGTH_LONG)
                 toast2.show()
                 toast2.setGravity(Gravity.BOTTOM,0,200)

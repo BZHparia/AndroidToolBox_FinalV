@@ -30,6 +30,10 @@ class HomeActivity : AppCompatActivity() {
             startActivity( Intent (this@HomeActivity, WebServicesActivity::class.java))
         }
 
+        idBtnBLE.setOnClickListener {
+            startActivity( Intent (this@HomeActivity, BLEscanActivity::class.java))
+        }
+
         idButtonDeco.setOnClickListener {
             val editor = sharedPreferences.edit()
             editor.putString("Login", " ")
