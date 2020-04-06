@@ -1,12 +1,15 @@
-package pk.com.pel.rizwanali.qrc.print;
+package fr.isen.dufaza.androidtoolbox;
 
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
+import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,7 +17,7 @@ import java.io.OutputStream;
 import java.util.Arrays;
 import java.util.UUID;
 
-import pk.com.pel.rizwanali.qrc.R;
+
 
 /**
  * Created by Brian on 2016-04-14.
@@ -31,7 +34,7 @@ public class BluetoothPrintService {
 
     // Member fields
     private final BluetoothAdapter mAdapter;
-    private final Handler mHandler;
+   // private final Handler mHandler;
     private int mState;
     private ConnectThread mConnectThread;
     private ConnectedThread mConnectedThread;
@@ -45,12 +48,14 @@ public class BluetoothPrintService {
 
     /**
      * Constructor. Prepares a new Bluetooth session.
-     * @param handler  A Handler to send messages back to the UI Activity
+    // * @param handler  A Handler to send messages back to the UI Activity
      */
-    public BluetoothPrintService(Handler handler) {
+    Context context;
+    public BluetoothPrintService(Context context) {
         mAdapter = BluetoothAdapter.getDefaultAdapter();
         mState = STATE_NONE;
-        mHandler = handler;
+        this.context = context;
+
     }
 
     /**
@@ -140,11 +145,15 @@ public class BluetoothPrintService {
         mConnectedThread.start();
 
         // Send the name of the connected device back to the UI Activity
-        Message msg = mHandler.obtainMessage(PrintActivity.MESSAGE_DEVICE_NAME);
-        Bundle bundle = new Bundle();
-        bundle.putString(PrintActivity.DEVICE_NAME, device.getName());
-        msg.setData(bundle);
-        mHandler.sendMessage(msg);
+//        Message msg = mHandler.obtainMessage(PrintActivity.MESSAGE_DEVICE_NAME);
+//        Bundle bundle = new Bundle();
+//        bundle.putString(PrintActivity.DEVICE_NAME, device.getName());
+//        msg.setData(bundle);
+//        mHandler.sendMessage(msg);
+
+
+        Log.d("sun","Device Connected: "+device.getName());
+        Log.d("sun","Device Connected");
 
         setState(STATE_CONNECTED);
     }
@@ -191,13 +200,15 @@ public class BluetoothPrintService {
         if (mState == STATE_NONE) return;
 
         // Send a failure message back to the Activity
-        Message msg = mHandler.obtainMessage(PrintActivity.MESSAGE_TOAST);
-        Bundle bundle = new Bundle();
-        bundle.putInt(PrintActivity.TOAST, R.string.connect_fail);
-        msg.setData(bundle);
-        mHandler.sendMessage(msg);
+//        Message msg = mHandler.obtainMessage(PrintActivity.MESSAGE_TOAST);
+//        Bundle bundle = new Bundle();
+//        bundle.putInt(PrintActivity.TOAST, R.string.connect_fail);
+//        msg.setData(bundle);
+//        mHandler.sendMessage(msg);
 
         // Start the service over to restart listening mode
+
+        Log.d("sun","Unable to connect device");
         BluetoothPrintService.this.start();
     }
 
@@ -209,13 +220,15 @@ public class BluetoothPrintService {
         if (mState == STATE_NONE) return;
 
         // Send a failure message back to the Activity
-        Message msg = mHandler.obtainMessage(PrintActivity.MESSAGE_TOAST);
-        Bundle bundle = new Bundle();
-        bundle.putInt(PrintActivity.TOAST, R.string.connect_lost);
-        msg.setData(bundle);
-        mHandler.sendMessage(msg);
+//        Message msg = mHandler.obtainMessage(PrintActivity.MESSAGE_TOAST);
+//        Bundle bundle = new Bundle();
+//        bundle.putInt(PrintActivity.TOAST, R.string.connect_lost);
+//        msg.setData(bundle);
+//        mHandler.sendMessage(msg);
 
         // Start the service over to restart listening mode
+      //  Toast.makeText(context,"connection lost",Toast.LENGTH_LONG).show();
+        Log.d("sun","connection lost");
         BluetoothPrintService.this.start();
     }
 
@@ -327,7 +340,7 @@ public class BluetoothPrintService {
                     // buffer can be over-written by next input stream data, so it should be copied
                     byte[] rcvData = Arrays.copyOf(buffer, bytes);
                     // Send the obtained bytes to the UI Activity
-                    mHandler.obtainMessage(PrintActivity.MESSAGE_READ, bytes, -1, rcvData).sendToTarget();
+                  //  mHandler.obtainMessage(3, bytes, -1, rcvData).sendToTarget();
                 } catch (IOException e) {
                 //    Log.e(TAG, "Connection Lost", e);
                     connectionLost();

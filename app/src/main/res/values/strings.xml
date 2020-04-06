@@ -19,4 +19,22 @@
     <string name="bonjour">Bonjour</string>
     <string name="d_connexion">DÉCONNEXION</string>
     <string name="identifiant">Identifiant</string>
+
+
+    <string name="toast_bt_na">bluetooth is not available</string>
+    <string name="bt_not_enabled_leaving">Bluetooth was not enabled. Leaving Bluetooth print.</string>
+    <string name="connect_fail">Unable to connect device</string>
+    <string name="connect_lost">Device connection was lost</string>
+    <string name="secure_connect">Connect a device - Secure</string>
+    <string name="insecure_connect">Connect a device - Insecure</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="title_paired_devices">Paired Devices</string>
+    <string name="title_other_devices">Other Available Devices</string>
+    <string name="button_scan">Scan for devices</string>
+    <string name="none_paired">No devices have been paired</string>
+    <string name="scanning">scanning for devices....</string>
+    <string name="select_device">select a device to connect</string>
+    <string name="none_found">No devices found</string>
+    <string name="not_connected">You are not connected to a device</string>
+    <string name="warn_timeout">Connection is not available.\nData sending is cancelled.</string>
 </resources>

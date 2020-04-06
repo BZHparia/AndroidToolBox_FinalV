@@ -2,24 +2,22 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:dist="http://schemas.android.com/apk/distribution"
     package="fr.isen.dufaza.androidtoolbox">
-
-    <!--Pour lire le JSON-->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <!--Pour avoir accès à la position GPS-->
+    <!-- Pour lire le JSON -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- Pour avoir accès à la position GPS -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <!--Pour lire les contacts-->
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
-    <!--Pour avoir accès au web et touch l'API-->
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <!--Pour utiliser le BLE-->
-    <uses-permission android:name="android.permission.BLUETOOTH"/>
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
-    <!-- If your app targets Android 9 or lower, you can declare
-         ACCESS_COARSE_LOCATION instead. -->
-    <!--N'autoriser que les téléphones compatibles-->
-    <uses-feature android:name="android.hardware.bluetooth_le" android:required="true"/>
-
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- Pour lire les contacts -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" /> <!-- Pour avoir accès au web et touch l'API -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- Pour utiliser le BLE -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <!--
+ If your app targets Android 9 or lower, you can declare
+         ACCESS_COARSE_LOCATION instead.
+    -->
+    <!-- N'autoriser que les téléphones compatibles -->
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -28,18 +26,18 @@
         android:roundIcon="@drawable/talos_principle_crop_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="fr.isen.dufaza.androidtoolbox.WebServicesActivity" />
-        <activity android:name="fr.isen.dufaza.androidtoolbox.PermitActivity" />
-        <activity android:name="fr.isen.dufaza.androidtoolbox.StorageActivity" />
-        <activity android:name="fr.isen.dufaza.androidtoolbox.FormulaireActivity" />
-        <activity android:name="fr.isen.dufaza.androidtoolbox.LifeCycleActivity" />
+        <activity android:name=".BLEDeviceActivity"></activity>
+        <activity android:name=".WebServicesActivity" />
+        <activity android:name=".PermitActivity" />
+        <activity android:name=".StorageActivity" />
+        <activity android:name=".FormulaireActivity" />
+        <activity android:name=".LifeCycleActivity" />
         <activity
-            android:name="fr.isen.dufaza.androidtoolbox.HomeActivity"
+            android:name=".HomeActivity"
             android:label="@string/title_app1"
-            android:theme="@style/AppTheme.BackGroundColorIsRed">
-        </activity>
+            android:theme="@style/AppTheme.BackGroundColorIsRed"></activity>
         <activity
-            android:name="fr.isen.dufaza.androidtoolbox.LoginActivity"
+            android:name=".LoginActivity"
             android:label="@string/title_app2"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -48,7 +46,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="fr.isen.dufaza.androidtoolbox.BLEscanActivity" />
+        <activity android:name=".BLEscanActivity" />
     </application>
 
 </manifest>

@@ -1,9 +1,210 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".BLEDeviceActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:id="@+id/top"
+        android:layout_alignParentTop="true"
+
+
+        >
+
+        <ImageView
+            android:id="@+id/tvCount"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/down_icon"
+            android:layout_centerVertical="true"
+
+            android:layout_alignParentRight="true"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+
+            />
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="vertical"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/tvCount"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:id="@+id/tvName"
+                android:textSize="17sp"
+                android:textColor="#494242"
+                android:gravity="bottom"
+                android:paddingLeft="10dp"
+                android:textStyle="bold"
+                android:text="Name"
+
+                />
+            <TextView
+
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/tvStatus"
+                android:textSize="15sp"
+                android:paddingTop="3dp"
+                android:text="Status: "
+                android:textColor="#494242"
+                android:paddingLeft="10dp"
+
+
+                />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+    <View
+        android:layout_below="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height=".5dp"
+        android:background="#929090"
+        android:layout_marginTop="3dp"
+        />
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/con"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="1dp"
+        android:background="#efefef"
+        >
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center_vertical"
+
+            android:textSize="15sp"
+            android:paddingTop="3dp"
+            android:text="Characteristics specification"
+            android:textColor="#494242"
+            android:paddingLeft="10dp"
+
+
+            />
+        <TextView
+            android:id="@+id/tvUidd"
+
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center_vertical"
+
+            android:textSize="12sp"
+            android:paddingTop="3dp"
+            android:text="UUID: "
+            android:textColor="#494242"
+            android:paddingLeft="10dp"
+
+
+            />
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center_vertical"
+
+            android:textSize="15sp"
+            android:paddingTop="3dp"
+            android:text="Properties: Lecture"
+            android:textColor="#494242"
+            android:paddingLeft="10dp"
+
+
+            />
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center_vertical"
+
+            android:textSize="15sp"
+            android:paddingTop="3dp"
+            android:text="Value: Hello"
+            android:textColor="#494242"
+            android:paddingLeft="10dp"
+
+
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            >
+            <TextView
+
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:gravity="center"
+
+                android:textSize="15sp"
+                android:paddingTop="3dp"
+                android:text="Lecture"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimaryDark"
+                android:paddingLeft="10dp"
+
+
+                />
+            <TextView
+
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:gravity="center"
+
+                android:textSize="15sp"
+                android:paddingTop="3dp"
+                android:text="Ecrire"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimaryDark"
+                android:paddingLeft="10dp"
+
+
+                />
+            <TextView
+
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:gravity="center"
+
+                android:textSize="15sp"
+                android:paddingTop="3dp"
+                android:text="Notifier"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimaryDark"
+                android:paddingLeft="10dp"
+
+
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

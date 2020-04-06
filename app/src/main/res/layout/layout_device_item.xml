@@ -1,6 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_marginTop="5dp"
+    android:layout_height="74dp">
 
-</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:id="@+id/top"
+        android:layout_alignParentTop="true"
+
+
+        >
+
+        <TextView
+            android:id="@+id/tvCount"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/red_bg"
+            android:text="22"
+            android:textSize="12sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:id="@+id/tvName"
+                android:textSize="17sp"
+                android:textColor="#494242"
+                android:gravity="bottom"
+                android:paddingLeft="10dp"
+                android:textStyle="bold"
+                android:text="Name"
+
+                />
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/tvId"
+                android:textSize="15sp"
+                android:paddingTop="3dp"
+                android:text="23:334:3r:$%:"
+                android:textColor="#494242"
+                android:paddingLeft="10dp"
+
+
+                />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <View
+        android:layout_below="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height=".5dp"
+        android:background="#B8B4B4"
+        android:layout_marginTop="3dp"
+        />
+
+
+
+</RelativeLayout>
